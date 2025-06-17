@@ -47,18 +47,27 @@ void setup() {
 
   display.clearDisplay();
 
-  display.setTextSize(4);
+  display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
-
-  String text = "V01D";
+  String title = "p r o j e c t";
   int16_t x1, y1;
-  uint16_t w, h;
-  display.getTextBounds(text, 0, 0, &x1, &y1, &w, &h);
-  int16_t x = (SCREEN_WIDTH - w) / 2;
-  int16_t y = (SCREEN_HEIGHT - h) / 2;
+  uint16_t w1, h1;
+  display.getTextBounds(title, 0, 0, &x1, &y1, &w1, &h1);
+  int16_t xTitle = (SCREEN_WIDTH - w1) / 2;
+  int16_t yTitle = 12; 
+  display.setCursor(xTitle, yTitle);
+  display.println(title);
 
-  display.setCursor(x, y);
+  display.setTextSize(4);
+  String text = "V01D";
+  int16_t x2, y2;
+  uint16_t w2, h2;
+  display.getTextBounds(text, 0, 0, &x2, &y2, &w2, &h2);
+  int16_t xText = (SCREEN_WIDTH - w2) / 2;
+  int16_t yText = yTitle + h1 + 4;
+  display.setCursor(xText, yText);
   display.println(text);
+  
   display.display();
   delay(1500);
   display.clearDisplay();
