@@ -1,6 +1,8 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <time.h>
+
 #include "menu.h"
 #include "beacon_flood.h"
 #include "fake_deauth.h"
@@ -12,12 +14,19 @@
 #include "ir_poweroff.h"
 #include "ir_replay.h"
 
+#define USER_NAME "username" //change it to whatever you prefer to be displayed
+
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1
 
 #define I2C_SDA 15
 #define I2C_SCL 14
+
+int hour = 0;
+int minute = 0;
+int second = 0;
+unsigned long lastClockUpdate = 0;
 
 #define IR_SEND_PIN 12
 IRsend irsend(IR_SEND_PIN);
@@ -29,10 +38,32 @@ TwoWire myWire = TwoWire(0);
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &myWire, -1);
 
 int menuIndex = 0;
-String menuItems[] = {"AP Flood", "Deauth (maybe?)", "Evil Portal", "BLE Spammer", "BLE Spoffing", "BLE jammer", "IR Powweroff", "IR Cloner"};
+String menuItems[] = {"AP Flood", "Deauth (maybe?)", "Evil Portal", "BLE Spammer", "BLE Spoffing", "BLE jammer", "IR Powweroff", "IR Cloner", "IR Cloner", "slot 1", "slot 2"};
 const int menuSize = sizeof(menuItems) / sizeof(menuItems[0]);
 
+void updateClock() {
+  unsigned long now = millis();
+  if (now - lastClockUpdate >= 1000) {
+    lastClockUpdate = now;
+    second++;
+    if (second >= 60) {
+      second = 0;
+      minute++;
+    }
+    if (minute >= 60) {
+      minute = 0;
+      hour++;
+    }
+    if (hour >= 24) {
+      hour = 0;
+    }
+  }
+}
+
 void setup() {
+  
+  configTime(0, 0, "pool.ntp.org", "time.nist.gov");
+  
   Serial.begin(115200);
 
   pinMode(btnDown, INPUT_PULLUP);
@@ -75,6 +106,8 @@ void setup() {
 }
 
 void loop() {
+  updateClock();
+  
   if (!digitalRead(btnDown)) {
     menuIndex = (menuIndex + 1) % menuSize;
     drawMenu();
@@ -112,6 +145,10 @@ void runSelectedTool(int index) {
       break;
     case 7:
       startIRReplay();
+      break;
+    case 8:
+      break;
+    case 9:
       break;
   }
 }
