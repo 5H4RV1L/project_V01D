@@ -108,10 +108,9 @@ Insta: [@this\_aint\_void](https://instagram.com/this_aint_void)
 
 ## 📄 License
 
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License**.
-
-You may remix, adapt, and build upon this work **non-commercially**, as long as you credit [@5H4RV1L](https://github.com/5H4RV1L).  
-More info: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+This project is licensed under a custom **MIT + Non-Commercial License**.  
+You're free to use, modify, and share this project for non-commercial purposes only.  
+For commercial licensing, contact: [@5H4RV1L](https://github.com/5H4RV1L)
 
 ---
 
