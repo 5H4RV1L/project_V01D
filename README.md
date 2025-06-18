@@ -1,7 +1,7 @@
 # project_V01D
 This is project V01D
 
-![Project V01D Device](https://github.com/5H4RV1L/project_V01D/tree/main/Hardware/device.jpg)
+![Project V01D Device](https://github.com/5H4RV1L/project_V01D/tree/main/Hardware/device.jpg?raw=true)
 
 > A pocket-sized, open-source cyber tool inspired by Flipper Zero — designed for Wi-Fi, BLE, and IR mischief. Built using an ESP32-CAM with OLED, buttons, and clean firmware. For educational purposes only. 🧠⚡
 
