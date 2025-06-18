@@ -9,7 +9,7 @@ This is project V01D
 
 ## 🚀 Overview
 
-**Project V01D** is a DIY hacker device that fits in your palm. It's capable of beacon floods, IR blasting, BLE spoofing, evil portal phishing, and more. Built entirely with affordable components and Arduino code, it brings serious pentest functionality to the streets.\n
+**Project V01D** is a DIY hacker device that fits in your palm. It's capable of beacon floods, IR blasting, BLE spoofing, evil portal phishing, and more. Built entirely with affordable components and Arduino code, it brings serious pentest functionality to the streets.<br>
 (Project V01D is still in beta version)
 
 ---
