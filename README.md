@@ -68,11 +68,13 @@ This is project V01D
 | `Select Button` | Start / Select / Stop                |
 | `Switch`        | ON / OFF / Program (pull IO0 to GND) |
 
-### ⚡ Power Notes
+### ⚡ Notes
 
 * Use a **high current 3.7V battery** with a boost converter to 5V
 * Do **not** cover the **ESP32-CAM’s RF shield** — it gets hot!
-
+* Remove the **TSOP out pin** connected to **GPIO2** before entering flash mode
+* Change the value of **USER_NAME** in **project_V01D.ino and menu.h** to whatever you want to be displayed (not 
+necessary for code to run)
 ### 🔧 Development Info
 
 * Arduino IDE (recommended)
