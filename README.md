@@ -121,7 +121,3 @@ MIT License — open to hack, remix, and evolve.
 ## 💬 Contributions & Suggestions
 
 Open to pull requests, ideas, or feature requests. Drop a DM or open an issue!
-
----
-
-**Let V01D consume the signal 🕶️💀**
